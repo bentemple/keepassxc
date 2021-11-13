@@ -172,6 +172,8 @@ public:
 
     void sortChildrenRecursively(bool reverse = false);
 
+    void touch();
+
 signals:
     void groupDataChanged(Group* group);
     void groupAboutToAdd(Group* group, int index);

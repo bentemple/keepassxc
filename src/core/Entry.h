@@ -249,6 +249,8 @@ public:
     bool canUpdateTimeinfo() const;
     void setUpdateTimeinfo(bool value);
 
+    void touch();
+
 signals:
     /**
      * Emitted when a default attribute has been changed.

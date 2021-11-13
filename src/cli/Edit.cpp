@@ -30,6 +30,7 @@ const QCommandLineOption Edit::TitleOption = QCommandLineOption(QStringList() <<
                                                                 QObject::tr("Title for the entry."),
                                                                 QObject::tr("title"));
 
+
 Edit::Edit()
 {
     name = QString("edit");

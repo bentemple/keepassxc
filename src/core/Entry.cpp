@@ -1386,6 +1386,15 @@ bool EntryData::operator!=(const EntryData& other) const
     return !(*this == other);
 }
 
+void Entry::touch()
+{
+    beginUpdate();
+    setUpdateTimeinfo(true);
+    updateTimeinfo();
+    setUpdateTimeinfo(false);
+    endUpdate();
+}
+
 bool EntryData::equals(const EntryData& other, CompareItemOptions options) const
 {
     if (::compare(iconNumber, other.iconNumber, options) != 0) {

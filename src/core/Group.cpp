@@ -1178,6 +1178,22 @@ bool Group::GroupData::operator!=(const Group::GroupData& other) const
     return !(*this == other);
 }
 
+void Group::touch()
+{
+    setUpdateTimeinfo(true);
+    updateTimeinfo();
+    setUpdateTimeinfo(false);
+
+    for (Group* recursiveChild : groupsRecursive(false)) {
+        Q_ASSERT(recursiveChild);
+        recursiveChild->touch();
+    }
+    for (Entry* recursiveEntry : entriesRecursive(false)) {
+        Q_ASSERT(recursiveEntry);
+        recursiveEntry->touch();
+    }
+}
+
 bool Group::GroupData::equals(const Group::GroupData& other, CompareItemOptions options) const
 {
     if (::compare(name, other.name, options) != 0) {

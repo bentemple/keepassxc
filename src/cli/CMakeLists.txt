@@ -40,6 +40,7 @@ set(cli_SOURCES
         Open.cpp
         Remove.cpp
         RemoveGroup.cpp
+        TouchGroup.cpp
         Search.cpp
         Show.cpp)
 
